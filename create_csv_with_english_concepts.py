@@ -1,9 +1,9 @@
 import csv
 import pandas as pd
 
-data=pd.read_csv("conceptnet-assertions.csv",header=None,delimeter="\t")
+#data=pd.read_csv("conceptnet-assertions.csv",header=None,delimeter="\t")
 
-data.columns=["edge","start_node","end_node","other"]
+#data.columns=["edge","start_node","end_node","other"]
 data = pd.read_csv('conceptnet-assertions.csv', delim_whitespace=True, header=None)
 
 # Filter rows based on the second column
