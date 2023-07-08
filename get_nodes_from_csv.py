@@ -1,13 +1,11 @@
 import csv
 import pandas as pd
 
-data=pd.read_csv("conceptnet-assertions.csv",header=None,delimeter="\t")
+data=pd.read_csv("english_assertions.csv",header=None,delim_whitespace=True)
 
-data.columns=["edge","start_node","end_node","other"]
-data = pd.read_csv('your_file.csv', delimiter='\t', header=None)
+data.columns=["relation","start_node","end_node"]
+filtered_data = data[data.iloc[:, 1] == 'car']
 
-# Filter rows based on the second column
-filtered_data = data[data.iloc[:, 1].str.split('/').str[1] == 'en']
-
-filtered_data = filtered_data[filtered_data.iloc[:, 2].str.split('/').str[1] == 'en']
+filtered_data_2 = data[data.iloc[:, 2] == 'car']
 filtered_data.to_csv("english_assertions.csv")
+combined_df = pd.concat([filtered_data, filtered_data_2], axis=0)
