@@ -37,4 +37,4 @@ def calculate_cosine_similarity_1(row):
     return similarity
 
 data["given_pair_numberbatch"]=data.apply(calculate_cosine_similarity_1, axis=1)
-data.to_excel("excel_files/MOH_X.xlsx")
+#data.to_excel("excel_files/MOH_X.xlsx")
