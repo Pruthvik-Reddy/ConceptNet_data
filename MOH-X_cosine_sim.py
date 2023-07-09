@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-data=pd.read_excel("MOH-X_formatted_svo_cleaned.xlsx")
+data=pd.read_excel("MOH-X_formatted_svo_cleaned.csv")
 with open("glove.6B.50d.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 embeddings = {}
