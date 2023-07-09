@@ -5,19 +5,22 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 data=pd.read_excel("excel_files/MOH_X.xlsx")
-with open("numberbatch-en.txt", "r", encoding="utf-8") as file:
+with open("numberbatch-en-3.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 embeddings = {}
 lines=lines[1:]
 for line in lines:
     line = line.strip().split(" ")
-    print(line)
     word = line[0].lower()
     word=word.split("/")
-    print(word)
+    flag=0
+    if word[2]=="en":
+        flag=1
     word=word[3]
-    embedding = [float(value) for value in line[1:]]
-    embeddings[word] = embedding
+    if flag:
+        embedding = [float(value) for value in line[1:]]
+        embeddings[word] = embedding
+        print(word)
 
 def calculate_cosine_similarity_1(row):
     word1 = row["arg1"]
