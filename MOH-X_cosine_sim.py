@@ -4,14 +4,15 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-data=pd.read_csv("MOH-X_formatted_svo_cleaned.csv")
-with open("glove.6B.50d.txt", "r", encoding="utf-8") as file:
+data=pd.read_excel("excel_files/MOH_X.xlsx")
+with open("numberbatch-en.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 embeddings = {}
 for line in lines:
-    parts = line.split()
-    word = parts[0].lower()
-    embedding = [float(value) for value in parts[1:]]
+    line = line.strip().split(" ")
+    word = line[0].lower()
+    word=word.split("/")[3]
+    embedding = [float(value) for value in line[1:]]
     embeddings[word] = embedding
 
 def calculate_cosine_similarity_1(row):
@@ -31,5 +32,5 @@ def calculate_cosine_similarity_1(row):
     similarity = cosine_similarity([embedding1], [embedding2])[0][0]
     return similarity
 
-data["given_pair_glove"]=data.apply(calculate_cosine_similarity_1, axis=1)
+data["given_pair_numberbatch"]=data.apply(calculate_cosine_similarity_1, axis=1)
 data.to_excel("excel_files/MOH_X.xlsx")
