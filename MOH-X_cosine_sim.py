@@ -10,6 +10,7 @@ with open("numberbatch-en.txt", "r", encoding="utf-8") as file:
 embeddings = {}
 for line in lines:
     line = line.strip().split(" ")
+    print(line)
     word = line[0].lower()
     word=word.split("/")
     print(word)
