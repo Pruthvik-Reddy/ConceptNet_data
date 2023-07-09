@@ -11,14 +11,15 @@ with open("glove.6B.50d.txt", "r", encoding="utf-8") as file:
 embeddings = {}
 for line in lines:
     parts = line.split()
-    word = parts[0]
+    word = parts[0].lower()
     embedding = [float(value) for value in parts[1:]]
     embeddings[word] = embedding
 
 def calculate_cosine_similarity_1(row):
     word1 = row["word_1"]
     word2 = row["word_2"]
-
+    word1=word1.lower()
+    word2=word2.lower()
     if word1 == "" or word2 == "":
         return 0.0
 
@@ -34,7 +35,9 @@ def calculate_cosine_similarity_1(row):
 def calculate_cosine_similarity_2(row):
     word1 = row["word_2"]
     word2 = row["word_3"]
-
+    word1=word1.lower()
+    word2=word2.lower()
+    
     if word1 == "" or word2 == "":
         return 0.0
 

@@ -1,5 +1,5 @@
-arg1,arg2,verb,sentence,verb_idx,label,word_1,word_2,word_3
-knowledge,absorb, He absorbed the knowledge or beliefs of his tribe .,1,1,Person,absord,knowledge
+arg1,arg2,sentence,verb_idx,label,word_1,word_2,word_3
+knowledge,absorb, He absorbed the knowledge or beliefs of his tribe .,1,1,Person,absorb,knowledge
 cost,absorb, He absorbed the costs for the accident .,1,1,Person,absorb,costs
 tax,absorb, The sales tax is absorbed into the state income tax .,4,1,Tax,absorb,tax
 immigrant,absorb, The immigrants were quickly absorbed into society .,4,1,People,absorb,society
