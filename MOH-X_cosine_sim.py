@@ -8,6 +8,7 @@ data=pd.read_excel("excel_files/MOH_X.xlsx")
 with open("numberbatch-en.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 embeddings = {}
+lines=lines[1:]
 for line in lines:
     line = line.strip().split(" ")
     print(line)
