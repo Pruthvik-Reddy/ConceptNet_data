@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-data=pd.read_csv("original_metaphor_file.csv",delim_whitespace=True)
+data=pd.read_csv("original_metaphor_file.csv")
 
 with open("glove.6B.50d.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
