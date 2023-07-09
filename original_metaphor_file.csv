@@ -1,0 +1,30 @@
+arg1,arg2,verb,sentence,verb_idx,label,word_1,word_2,word_3
+knowledge,,absorb, He absorbed the knowledge or beliefs of his tribe .,1,1,Person,absord,knowledge
+cost,,absorb, He absorbed the costs for the accident .,1,1,Person,absorb,costs
+tax,,absorb, The sales tax is absorbed into the state income tax .,4,1,Tax,absorb,tax
+immigrant,,absorb, The immigrants were quickly absorbed into society .,4,1,People,absorb,society
+interest,,absorb, Her interest in butterflies absorbs her completely .,4,1,Person,absorb,interest
+workers,,abuse, This boss abuses his workers .,2,0,Person,absorb,person 
+system,,abuse, Do n't abuse the system .,2,1,"""""",Abuse ,system
+policeman,,abuse, The actress abused the policeman who gave her a parking ticket .,2,0,Person,Abuse ,person 
+alcohol,,abuse, Her husband often abuses alcohol .,3,1,person,Abuse ,alcohol
+guest,,accommodate, This hotel can accommodate 250 guests .,3,0,place,accommodate,people
+result,,accommodate, The scientists had to accommodate the new results with the existing theories .,4,1,People,accommodate,results
+submission,,acknowledge, The program committee acknowledged the submission of the authors of the paper .,3,0,committee,acknowledge,submission
+colleague,,acknowledge, He never acknowledges his colleagues when they run into him in the hallway .,2,0,person,acknowledge,people
+kindness,,acknowledge, We must acknowledge the kindness she showed towards us .,2,0,people,acknowledge,kindness
+deed,,acknowledge, acknowledge the deed .,0,0,deed,acknowledge,""""""
+prince,,acknowledge, The Crown Prince was acknowledged as the true heir to the throne .,4,0,Person,acknowledge,heir
+resident,,adhere, The residents of this village adhered to Catholicism .,5,1,people,adhere,religion
+wallpaper,,adhere, Will this wallpaper adhere to the wall ?,3,0,wallpaper,adhere,wall
+steering,,answer, The steering of my new car answers to the slightest touch .,6,1,car,answer,touch
+telephone,,answer, answer the telephone .,0,0,answer,telephone,""""""
+question,,answer, The question concerning the meaning of life can not be answered .,10,0,question,concerned,answer
+defendant,,answer, The defendant answered to all the charges of the prosecution .,2,0,defendant,answer,charges
+mountain,,ascend, We ascended the mountain .,1,0,people,ascend,mountain
+inheritance,,ascend, Inheritance may not ascend linearly .,3,1,inheritance,ascend,linearly
+path,,ascend, The path ascended to the top of the hill .,2,0,path,ascend,hill
+poland,,attack," Hitler attacked Poland on September 1 , 1939 and started World War II .",1,0,person,attack,country
+speaker,,attack, The editors of the left - leaning paper attacked the new House Speaker .,8,1,editors,attack,person 
+problem,,attack, I attacked the problem as soon as I got out of bed .,1,1,person,attack,problem
+cancer,,attack, The cancer cells are attacking his liver .,4,1,cancer,attack,liver
