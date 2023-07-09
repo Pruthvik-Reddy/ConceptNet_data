@@ -11,7 +11,9 @@ embeddings = {}
 for line in lines:
     line = line.strip().split(" ")
     word = line[0].lower()
-    word=word.split("/")[3]
+    word=word.split("/")
+    print(word)
+    word=word[3]
     embedding = [float(value) for value in line[1:]]
     embeddings[word] = embedding
 
