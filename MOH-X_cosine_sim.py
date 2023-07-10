@@ -109,6 +109,9 @@ accuracy = accuracy_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)
 recall = recall_score(y_test, y_pred)
+print("F1 score : ",f1)
+print("Precision : ",precision)
+print("Recall : ",recall)
 
 
 print("For Numberbatch Embeddings :")
@@ -129,4 +132,7 @@ accuracy = accuracy_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)
 recall = recall_score(y_test, y_pred)
+print("F1 score : ",f1)
+print("Precision : ",precision)
+print("Recall : ",recall)
 
