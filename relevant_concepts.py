@@ -75,9 +75,13 @@ for i in range(len(potential_words)):
    else:
       embedding_sum=0
       for j in range(len(words)):
-         embedding_sum+=embeddings[words[j]]
+         if embedding_sum==0:
+          embedding_sum=embeddings[words[j]]
+         else:
+          embedding_sum+=embeddings[words[j]]
       embedding_sum=embedding_sum/len(words)
       concepts_cosine_sim[word]=cosine_similarity([embedding_sum], [end_node_embedding])[0][0]
 
 sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
 top_k_items = sorted_items[:6]
+print(top_k_items)
