@@ -96,6 +96,8 @@ print("Lowest values:\n", min_values)
 print("For Glove Embeddings :")
 X=data["label"]
 Y=data["second_pair_glove"]
+X=np.reshape(X,[-1,1])
+Y=np.reshape(Y,[-1,1])
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
 
@@ -111,6 +113,9 @@ recall = recall_score(y_test, y_pred)
 print("For Numberbatch Embeddings :")
 X=data["label"]
 Y=data["second_pair_numberbatch"]
+X=np.reshape(X,[-1,1])
+Y=np.reshape(Y,[-1,1])
+
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
 
