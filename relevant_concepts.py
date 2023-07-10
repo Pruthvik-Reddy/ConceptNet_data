@@ -37,13 +37,13 @@ for line in lines:
 
 
 
-edges=get_all_edges_of_a_concept("graduation")
+edges=get_all_edges_of_a_concept("life")
 related_nodes=[]
 for edge in edges:
   lang1=edge["start"]["@id"].split("/")[2]
   lang2=edge["end"]["@id"].split("/")[2]
   if lang1=="en" and lang2=="en" :
-    if edge["start"]["label"]=="graduation":
+    if edge["start"]["label"]=="life":
       related_nodes.append(edge["end"]["label"])
       #print(edge["end"]["label"],edge["rel"]["label"])
     else:
@@ -63,7 +63,7 @@ for i in range(len(related_nodes)):
    potential_words.append(word)
 
 
-start_node_embedding = embeddings["graduation"]
+start_node_embedding = embeddings["life"]
 end_node_embedding = embeddings["journey"]
 
 concepts_cosine_sim = {}
@@ -117,7 +117,7 @@ for i in range(len(related_nodes)):
 
 
 start_node_embedding = embeddings["journey"]
-end_node_embedding = embeddings["graduation"]
+end_node_embedding = embeddings["life"]
 
 concepts_cosine_sim = {}
 for i in range(len(potential_words)):
@@ -175,7 +175,7 @@ for i in range(len(related_nodes)):
 
 
 start_node_embedding = embeddings["journey"]
-end_node_embedding = embeddings["graduation"]
+end_node_embedding = embeddings["life"]
 
 end_node_embedding=[a + b for a, b in zip(start_node_embedding, end_node_embedding)]
 
