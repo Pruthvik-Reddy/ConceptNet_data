@@ -71,7 +71,7 @@ for i in range(len(potential_words)):
     if len(words) == 1:
         concepts_cosine_sim[word] = cosine_similarity([embeddings[word]], [end_node_embedding])[0][0]
     else:
-        embedding_sum = [0] * len(embeddings[word])
+        embedding_sum = [0] * len(end_node_embedding)
         for j in range(len(words)):
             embedding_sum = [a + b for a, b in zip(embedding_sum, embeddings[words[j]])]
         embedding_sum = [val / len(words) for val in embedding_sum]
