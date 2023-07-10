@@ -100,7 +100,8 @@ X=np.reshape(X,[-1,1])
 Y=np.reshape(Y,[-1,1])
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
-
+y_train=np.ravel(y_train)
+y_test=np.ravel(y_test)
 model = LogisticRegression()
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
@@ -117,6 +118,8 @@ X=np.reshape(X,[-1,1])
 Y=np.reshape(Y,[-1,1])
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+y_train=np.ravel(y_train)
+y_test=np.ravel(y_test)
 
 
 model = LogisticRegression()
