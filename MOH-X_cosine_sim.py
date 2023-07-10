@@ -73,9 +73,18 @@ data["second_pair_numberbatch"]=data.apply(calculate_cosine_similarity_1, axis=1
 
 data.to_excel("excel_files/MOH_X_3.xlsx")
 
-avg_values = data.groupby('label')['values'].mean()
-max_values = data.groupby('label')['values'].max()
-min_values = data.groupby('label')['values'].min()
+avg_values = data.groupby('label')['second_pair_glove'].mean()
+max_values = data.groupby('label')['second_pair_glove'].max()
+min_values = data.groupby('label')['second_pair_glove'].min()
+print("For Glove Embeddings")
+print("Average values:\n", avg_values)
+print("Highest values:\n", max_values)
+print("Lowest values:\n", min_values)
+
+avg_values = data.groupby('label')['second_pair_numberbatch'].mean()
+max_values = data.groupby('label')['second_pair_numberbatch'].max()
+min_values = data.groupby('label')['second_pair_numberbatch'].min()
+print("For Numberbatch Embeddings")
 print("Average values:\n", avg_values)
 print("Highest values:\n", max_values)
 print("Lowest values:\n", min_values)
