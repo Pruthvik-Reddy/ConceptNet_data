@@ -52,35 +52,30 @@ for i in range(len(related_nodes)):
          potential_words.append(j)
    potential_words.append(word)
 
-
 with open("glove.6B.50d.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 embeddings = {}
 for line in lines:
     parts = line.split()
     word = parts[0].lower()
-    embedding= [float(value) for value in parts[1:]]
+    embedding = [float(value) for value in parts[1:]]
     embeddings[word] = embedding
 
+start_node_embedding = embeddings["graduation"]
+end_node_embedding = embeddings["journey"]
 
-start_node_embedding=embeddings["graduation"]
-end_node_embedding=embeddings["journey"]
-
-concepts_cosine_sim=dict()
+concepts_cosine_sim = {}
 for i in range(len(potential_words)):
-   word=potential_words[i]
-   words=word.split(" ")
-   if len(words)==1:
-      concepts_cosine_sim[word]=cosine_similarity([embeddings[word]], [end_node_embedding])[0][0]
-   else:
-      embedding_sum=0
-      for j in range(len(words)):
-         if embedding_sum==0:
-          embedding_sum=embeddings[words[j]]
-         else:
-          embedding_sum+=embeddings[words[j]]
-      embedding_sum=embedding_sum/len(words)
-      concepts_cosine_sim[word]=cosine_similarity([embedding_sum], [end_node_embedding])[0][0]
+    word = potential_words[i]
+    words = word.split(" ")
+    if len(words) == 1:
+        concepts_cosine_sim[word] = cosine_similarity([embeddings[word]], [end_node_embedding])[0][0]
+    else:
+        embedding_sum = [0] * len(embeddings[word])
+        for j in range(len(words)):
+            embedding_sum = [a + b for a, b in zip(embedding_sum, embeddings[words[j]])]
+        embedding_sum = [val / len(words) for val in embedding_sum]
+        concepts_cosine_sim[word] = cosine_similarity([embedding_sum], [end_node_embedding])[0][0]
 
 sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
 top_k_items = sorted_items[:6]
