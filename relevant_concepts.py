@@ -198,5 +198,5 @@ for i in range(len(potential_words)):
         concepts_cosine_sim[word] = cosine_similarity([embedding_sum], [end_node_embedding])[0][0]
 
 sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
-top_k_items = sorted_items[:6]
+top_k_items = sorted_items[:12]
 print(top_k_items)
