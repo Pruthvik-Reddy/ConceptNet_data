@@ -148,7 +148,7 @@ def return_sorted_properties_with_start_embedding_only(start_node,end_node):
 
     sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
     top_k_items = sorted_items[:10]
-    print("Top Items by comparing only End_node_Embedding ")
+    print("Top Items by comparing only Start_node_Embedding ")
     print(top_k_items)
 
 
@@ -215,6 +215,29 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node):
 
 
 
+#Accommodate the results
+print("Results for Accomodate the results")
+return_sorted_properties_with_end_embedding_only("accomodate","results")
+return_sorted_properties_with_start_embedding_only("accomodate","results")
+return_sorted_properties_with_start_and_end_embedding("accomodate","results")
+
+#Life is a journey
+print("Results for Life is a journey")
+return_sorted_properties_with_end_embedding_only("life","journey")
+return_sorted_properties_with_start_embedding_only("life","journey")
+return_sorted_properties_with_start_and_end_embedding("life","journey")
+
+#Life in the camp drain him ( Life, drain )
+print("Results for Life in the camp drained him")
+return_sorted_properties_with_end_embedding_only("life","drain")
+return_sorted_properties_with_start_embedding_only("life","drain")
+return_sorted_properties_with_start_and_end_embedding("life","drain")
+
+#The boss exploded when he heard the resignation of his secretary ( Boss, Explode)
+print("Results for Boss exploded")
+return_sorted_properties_with_end_embedding_only("boss","explode")
+return_sorted_properties_with_start_embedding_only("boss","explode")
+return_sorted_properties_with_start_and_end_embedding("boss","explode")
 
 
 
