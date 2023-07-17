@@ -71,7 +71,8 @@ def return_sorted_properties_with_end_embedding_only(start_node,end_node):
 
     start_node_embedding = glove_embeddings[start_node]
     end_node_embedding = glove_embeddings[end_node]
-    potential_words=potential_words+broken_words
+    #potential_words=potential_words+broken_words
+    potential_words=broken_words
 
     concepts_cosine_sim = {}
     for i in range(len(potential_words)):
@@ -128,7 +129,8 @@ def return_sorted_properties_with_start_embedding_only(start_node,end_node):
 
     start_node_embedding = glove_embeddings[start_node]
     end_node_embedding = glove_embeddings[end_node]
-    potential_words=potential_words+broken_words
+    #potential_words=potential_words+broken_words
+    potential_words=broken_words
 
     concepts_cosine_sim = {}
     for i in range(len(potential_words)):
@@ -189,8 +191,8 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node):
     end_node_embedding = glove_embeddings[end_node]
     end_node_embedding=[a + b for a, b in zip(start_node_embedding, end_node_embedding)]
 
-    potential_words=potential_words+broken_words
-
+    #potential_words=potential_words+broken_words
+    potential_words=broken_words
     concepts_cosine_sim = {}
     for i in range(len(potential_words)):
         word = potential_words[i]
