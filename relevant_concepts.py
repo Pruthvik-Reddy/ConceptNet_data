@@ -95,9 +95,12 @@ def return_sorted_properties_with_end_embedding_only(start_node,end_node,flag):
             concepts_cosine_sim[word] = cosine_similarity([embedding_sum], [end_node_embedding])[0][0]
 
     sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
-    top_k_items = sorted_items[:10]
+    #top_k_items = sorted_items[:10]
+    top_k_items=[]
+    for i in range(len(sorted_items)):
+        top_k_items.append(sorted_items[i][0])
     print("Top Items by comparing only End_node_Embedding ")
-    print(top_k_items)
+    print(top_k_items[:12])
 
 
 def return_sorted_properties_with_start_embedding_only(start_node,end_node,flag):
@@ -156,9 +159,13 @@ def return_sorted_properties_with_start_embedding_only(start_node,end_node,flag)
             concepts_cosine_sim[word] = cosine_similarity([embedding_sum], [start_node_embedding])[0][0]
 
     sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
-    top_k_items = sorted_items[:10]
+    #top_k_items = sorted_items[:10]
+    top_k_items=[]
+    for i in range(len(sorted_items)):
+        top_k_items.append(sorted_items[i][0])
+    
     print("Top Items by comparing only Start_node_Embedding ")
-    print(top_k_items)
+    print(top_k_items[:10])
 
 
 
@@ -167,7 +174,7 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node,fl
     if flag==0:
         edges=get_all_edges_of_a_concept(start_node)
     else:
-        edges=get_all_edges_of_a_concept(end_node_)
+        edges=get_all_edges_of_a_concept(end_node)
     related_nodes=[]
     for edge in edges:
         lang1=edge["start"]["@id"].split("/")[2]
@@ -220,9 +227,13 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node,fl
             concepts_cosine_sim[word] = cosine_similarity([embedding_sum], [end_node_embedding])[0][0]
 
     sorted_items = sorted(concepts_cosine_sim.items(), key=lambda x: x[1], reverse=True)
-    top_k_items = sorted_items[:10]
+    #top_k_items = sorted_items[:10]
+    top_k_items=[]
+    for i in range(len(sorted_items)):
+        top_k_items.append(sorted_items[i][0])
+    
     print("Top Items by comparing both Start and End_node_Embedding ")
-    print(top_k_items)
+    print(top_k_items[:12])
 
 
 
