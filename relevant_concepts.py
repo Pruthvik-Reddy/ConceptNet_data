@@ -78,13 +78,13 @@ def return_sorted_properties_with_end_embedding_only(start_node,end_node):
         word = potential_words[i]
         words = word.split(" ")
         if len(words) == 1:
-            if word in glove_embeddings:
+            if word in glove_embeddings and word!=start_node and word!=end_node:
                 concepts_cosine_sim[word] = cosine_similarity([glove_embeddings[word]], [end_node_embedding])[0][0]
         
         else:
             embedding_sum = [0] * len(end_node_embedding)
             for j in range(len(words)):
-                if words[j] in glove_embeddings:
+                if words[j] in glove_embeddings and words[j]!=start_node and words[j]!=end_node:
                 
                     embedding_sum = [a + b for a, b in zip(embedding_sum, glove_embeddings[words[j]])]
             embedding_sum = [val / len(words) for val in embedding_sum]
@@ -135,13 +135,13 @@ def return_sorted_properties_with_start_embedding_only(start_node,end_node):
         word = potential_words[i]
         words = word.split(" ")
         if len(words) == 1:
-            if word in glove_embeddings:
+            if word in glove_embeddings and word!=start_node and word!=end_node:
                 concepts_cosine_sim[word] = cosine_similarity([glove_embeddings[word]], [start_node_embedding])[0][0]
         
         else:
             embedding_sum = [0] * len(start_node_embedding)
             for j in range(len(words)):
-                if words[j] in glove_embeddings:
+                if words[j] in glove_embeddings and words[j]!=start_node and words[j]!=end_node:
                 
                     embedding_sum = [a + b for a, b in zip(embedding_sum, glove_embeddings[words[j]])]
             embedding_sum = [val / len(words) for val in embedding_sum]
@@ -196,13 +196,13 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node):
         word = potential_words[i]
         words = word.split(" ")
         if len(words) == 1:
-            if word in glove_embeddings:
+            if word in glove_embeddings and word!=start_node and word!=end_node:
                 concepts_cosine_sim[word] = cosine_similarity([glove_embeddings[word]], [end_node_embedding])[0][0]
         
         else:
             embedding_sum = [0] * len(end_node_embedding)
             for j in range(len(words)):
-                if words[j] in glove_embeddings:
+                if words[j] in glove_embeddings and words[j]!=start_node and words[j]!=end_node:
                 
                     embedding_sum = [a + b for a, b in zip(embedding_sum, glove_embeddings[words[j]])]
             embedding_sum = [val / len(words) for val in embedding_sum]
@@ -222,11 +222,21 @@ return_sorted_properties_with_end_embedding_only("accommodate","results")
 return_sorted_properties_with_start_embedding_only("accommodate","results")
 return_sorted_properties_with_start_and_end_embedding("accommodate","results")
 
+
+print()
+print()
+print()
+print()
 #Life is a journey
 print("Results for Life is a journey")
 return_sorted_properties_with_end_embedding_only("life","journey")
 return_sorted_properties_with_start_embedding_only("life","journey")
 return_sorted_properties_with_start_and_end_embedding("life","journey")
+
+print()
+print()
+print()
+print()
 
 #Life in the camp drain him ( Life, drain )
 print("Results for Life in the camp drained him")
@@ -234,6 +244,10 @@ return_sorted_properties_with_end_embedding_only("life","drain")
 return_sorted_properties_with_start_embedding_only("life","drain")
 return_sorted_properties_with_start_and_end_embedding("life","drain")
 
+print()
+print()
+print()
+print()
 #The boss exploded when he heard the resignation of his secretary ( Boss, Explode)
 print("Results for Boss exploded")
 return_sorted_properties_with_end_embedding_only("boss","explode")
