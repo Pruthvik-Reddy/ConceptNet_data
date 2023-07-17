@@ -39,8 +39,11 @@ for line in lines:
     glove_embeddings[word] = embedding
 
 
-def return_sorted_properties_with_end_embedding_only(start_node,end_node):
-    edges=get_all_edges_of_a_concept(start_node)
+def return_sorted_properties_with_end_embedding_only(start_node,end_node,flag):
+    if flag==0:
+        edges=get_all_edges_of_a_concept(start_node)
+    else:
+        edges=get_all_edges_of_a_concept(end_node)
     related_nodes=[]
     for edge in edges:
         lang1=edge["start"]["@id"].split("/")[2]
@@ -97,8 +100,11 @@ def return_sorted_properties_with_end_embedding_only(start_node,end_node):
     print(top_k_items)
 
 
-def return_sorted_properties_with_start_embedding_only(start_node,end_node):
-    edges=get_all_edges_of_a_concept(start_node)
+def return_sorted_properties_with_start_embedding_only(start_node,end_node,flag):
+    if flag==0:
+        edges=get_all_edges_of_a_concept(start_node)
+    else:
+        edges=get_all_edges_of_a_concept(end_node)
     related_nodes=[]
     for edge in edges:
         lang1=edge["start"]["@id"].split("/")[2]
@@ -157,8 +163,11 @@ def return_sorted_properties_with_start_embedding_only(start_node,end_node):
 
 
 
-def return_sorted_properties_with_start_and_end_embedding(start_node,end_node):
-    edges=get_all_edges_of_a_concept(start_node)
+def return_sorted_properties_with_start_and_end_embedding(start_node,end_node,flag):
+    if flag==0:
+        edges=get_all_edges_of_a_concept(start_node)
+    else:
+        edges=get_all_edges_of_a_concept(end_node_)
     related_nodes=[]
     for edge in edges:
         lang1=edge["start"]["@id"].split("/")[2]
@@ -220,9 +229,13 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node):
 
 #Accommodate the results
 print("Results for Accomodate the results")
-return_sorted_properties_with_end_embedding_only("accommodate","results")
-return_sorted_properties_with_start_embedding_only("accommodate","results")
-return_sorted_properties_with_start_and_end_embedding("accommodate","results")
+return_sorted_properties_with_end_embedding_only("accommodate","results",0)
+return_sorted_properties_with_start_embedding_only("accommodate","results",0)
+return_sorted_properties_with_start_and_end_embedding("accommodate","results",0)
+
+return_sorted_properties_with_end_embedding_only("accommodate","results",1)
+return_sorted_properties_with_start_embedding_only("accommodate","results",1)
+return_sorted_properties_with_start_and_end_embedding("accommodate","results",1)
 
 
 print()
@@ -231,9 +244,14 @@ print()
 print()
 #Life is a journey
 print("Results for Life is a journey")
-return_sorted_properties_with_end_embedding_only("life","journey")
-return_sorted_properties_with_start_embedding_only("life","journey")
-return_sorted_properties_with_start_and_end_embedding("life","journey")
+return_sorted_properties_with_end_embedding_only("life","journey",0)
+return_sorted_properties_with_start_embedding_only("life","journey",0)
+return_sorted_properties_with_start_and_end_embedding("life","journey",0)
+
+return_sorted_properties_with_end_embedding_only("life","journey",1)
+return_sorted_properties_with_start_embedding_only("life","journey",1)
+return_sorted_properties_with_start_and_end_embedding("life","journey",1)
+
 
 print()
 print()
@@ -242,9 +260,13 @@ print()
 
 #Life in the camp drain him ( Life, drain )
 print("Results for Life in the camp drained him")
-return_sorted_properties_with_end_embedding_only("life","drain")
-return_sorted_properties_with_start_embedding_only("life","drain")
-return_sorted_properties_with_start_and_end_embedding("life","drain")
+return_sorted_properties_with_end_embedding_only("life","drain",0)
+return_sorted_properties_with_start_embedding_only("life","drain",0)
+return_sorted_properties_with_start_and_end_embedding("life","drain",0)
+
+return_sorted_properties_with_end_embedding_only("life","drain",1)
+return_sorted_properties_with_start_embedding_only("life","drain",1)
+return_sorted_properties_with_start_and_end_embedding("life","drain",1)
 
 print()
 print()
@@ -252,9 +274,12 @@ print()
 print()
 #The boss exploded when he heard the resignation of his secretary ( Boss, Explode)
 print("Results for Boss exploded")
-return_sorted_properties_with_end_embedding_only("boss","explode")
-return_sorted_properties_with_start_embedding_only("boss","explode")
-return_sorted_properties_with_start_and_end_embedding("boss","explode")
+return_sorted_properties_with_end_embedding_only("boss","explode",0)
+return_sorted_properties_with_start_embedding_only("boss","explode",0)
+return_sorted_properties_with_start_and_end_embedding("boss","explode",0)
 
+return_sorted_properties_with_end_embedding_only("boss","explode",1)
+return_sorted_properties_with_start_embedding_only("boss","explode",)
+return_sorted_properties_with_start_and_end_embedding("boss","explode",1)
 
 
