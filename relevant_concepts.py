@@ -12,7 +12,8 @@ def get_all_edges_of_a_concept(concept,language="en"):
     for i in edges:
         all_edges.append(i)
 
-
+    if "view" not in obj:
+        return all_edges
 
     while "nextPage" in obj["view"]:
         nextpage=obj["view"]["nextPage"]
@@ -217,9 +218,9 @@ def return_sorted_properties_with_start_and_end_embedding(start_node,end_node):
 
 #Accommodate the results
 print("Results for Accomodate the results")
-return_sorted_properties_with_end_embedding_only("accomodate","results")
-return_sorted_properties_with_start_embedding_only("accomodate","results")
-return_sorted_properties_with_start_and_end_embedding("accomodate","results")
+return_sorted_properties_with_end_embedding_only("accommodate","results")
+return_sorted_properties_with_start_embedding_only("accommodate","results")
+return_sorted_properties_with_start_and_end_embedding("accommodate","results")
 
 #Life is a journey
 print("Results for Life is a journey")
