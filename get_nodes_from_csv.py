@@ -56,7 +56,7 @@ for i in range(len(literal_pairs)):
   filtered_data = data[data.iloc[:, 1] == concept1]
   filtered_data_2 = data[data.iloc[:, 2] == concept1]
   combined_df = pd.concat([filtered_data, filtered_data_2], axis=0)
-  end_exists = data["start_node"].str.contains(concept2, case=False) | data["end_node"].str.contains(concept2, case=False)
+  end_exists = combined_df["start_node"].str.contains(concept2, case=False) | combined_df["end_node"].str.contains(concept2, case=False)
   if end_exists.any():
      positive_literal_pairs_count+=1
      print("Positive : ", concept1,concept2)
